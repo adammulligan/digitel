@@ -9,7 +9,7 @@ class Tunnel
   def start
     wait_until_active do
       turn_on_proxy
-      system "ssh -C2qTnN -D 8080 -p 22 root@#{@droplet.ip_address}"
+      system "ssh -oStrictHostKeyChecking=no -C2qTnN -D 8080 -p 22 root@#{@droplet.ip_address}"
     end
   end
 
