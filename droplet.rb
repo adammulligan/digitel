@@ -8,7 +8,7 @@ class Droplet
       "region" => "nyc3",
       "size" => "512mb",
       "image" => "ubuntu-14-04-x64",
-      "ssh_keys" => [@opts[:ssh_key_id]],
+      "ssh_keys" => @opts[:ssh_key_ids],
       "backups" => false,
       "ipv6" => true,
       "user_data" => nil,
@@ -25,7 +25,15 @@ class Droplet
   end
 
   def destroy
-    barge.droplet.destroy(@droplet.id)
+    print "Attempting to destroy droplet, this might take a few moments..."
+
+    loop do
+      response = barge.droplet.destroy(@droplet.id)
+      print "."
+
+      break unless response.id == "unprocessable_entity"
+      sleep 1
+    end
   end
 
   private

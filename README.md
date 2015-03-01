@@ -3,18 +3,26 @@
 An automated, Digital Ocean based SSH tunnel script. Inspired by
 @lucidstack.
 
+Things are a bit fragile still, so I'd recommend you keep an eye on your
+Digital Ocean control panel to make sure you're not racking up bills for
+unused servers.
+
 ## Usage
 
-Pop your Digital Ocean SSH key fingerprint in main.rb (you can find it
-in the DO control panel), along with your Digital Ocean API access
-token.
+Pop your Digital Ocean SSH key fingerprint in config.yml.example (you
+can find it in the DO control panel), along with your Digital Ocean API
+access token.
 
 ```
-ruby main.rb
+cp config.yml.example config.yml
+./digitel
 ```
 
 You should now have a SOCKS proxy pointing to a Digital Ocean SSH
 tunnel. Use it for your international internet requirements :-)
+
+If you put this directory somewhere on your `$PATH`, you can access
+`digitel` anywhere.
 
 ## How it works
 
@@ -26,7 +34,6 @@ shuts the server down.
 
 ## TODO
 
-- [ ] Automatically get current network service type (Wi-Fi or Ethernet)
 - [ ] Box deletion doesn't seem to work reliably
 - [ ] Also destroy box on exceptions, as well as ctrl+c
 - [ ] Handle different DO regions
