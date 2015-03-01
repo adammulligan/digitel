@@ -1,4 +1,5 @@
 require './droplet'
+require './utils/service'
 
 class Tunnel
   def initialize opts
@@ -29,11 +30,15 @@ class Tunnel
   end
 
   def turn_on_proxy
-    system "networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
-    system "networksetup -setsocksfirewallproxystate Wi-Fi on"
+    system "networksetup -setsocksfirewallproxy #{service_name} localhost 8080"
+    system "networksetup -setsocksfirewallproxystate #{service_name} on"
   end
 
   def turn_off_proxy
-    system "networksetup -setsocksfirewallproxystate Wi-Fi off"
+    system "networksetup -setsocksfirewallproxystate #{service_name} off"
+  end
+
+  def service_name
+    Utils::Service.current_service_name
   end
 end
