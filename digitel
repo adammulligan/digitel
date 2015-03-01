@@ -8,4 +8,11 @@ tunnel = Tunnel.new(opts)
 
 trap("INT") { tunnel.stop; exit }
 
-tunnel.start
+begin
+  tunnel.start
+rescue => e
+  puts "ERROR"
+  puts e
+
+  tunnel.stop
+end
