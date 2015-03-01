@@ -15,11 +15,14 @@ access token.
 
 ```
 cp config.yml.example config.yml
-ruby main.rb
+./digitel
 ```
 
 You should now have a SOCKS proxy pointing to a Digital Ocean SSH
 tunnel. Use it for your international internet requirements :-)
+
+If you put this directory somewhere on your `$PATH`, you can access
+`digitel` anywhere.
 
 ## How it works
 
