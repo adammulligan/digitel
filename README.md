@@ -26,6 +26,7 @@ shuts the server down.
 
 ## TODO
 
+- [ ] Automatically get current network service type (Wi-Fi or Ethernet)
 - [ ] Box deletion doesn't seem to work reliably
 - [ ] Also destroy box on exceptions, as well as ctrl+c
 - [ ] Handle different DO regions
