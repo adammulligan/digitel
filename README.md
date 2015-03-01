@@ -3,6 +3,10 @@
 An automated, Digital Ocean based SSH tunnel script. Inspired by
 @lucidstack.
 
+Things are a bit fragile still, so I'd recommend you keep an eye on your
+Digital Ocean control panel to make sure you're not racking up bills for
+unused servers.
+
 ## Usage
 
 Pop your Digital Ocean SSH key fingerprint in main.rb (you can find it
