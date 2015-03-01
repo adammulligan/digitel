@@ -25,7 +25,15 @@ class Droplet
   end
 
   def destroy
-    barge.droplet.destroy(@droplet.id)
+    print "Attempting to destroy droplet, this might take a few moments..."
+
+    loop do
+      response = barge.droplet.destroy(@droplet.id)
+      print "."
+
+      break unless response.id == "unprocessable_entity"
+      sleep 1
+    end
   end
 
   private
