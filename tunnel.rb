@@ -7,7 +7,9 @@ class Tunnel
   end
 
   def start
+    puts "Waiting for droplet to become active (this could take a minute or two)..."
     wait_until_active do
+      puts "Connecting to tunnel (don't forget to check your IP has changed)..."
       turn_on_proxy
       system "ssh -oStrictHostKeyChecking=no -C2qTnN -D 8080 -p 22 root@#{@droplet.ip_address}"
     end

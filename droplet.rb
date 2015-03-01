@@ -3,6 +3,8 @@ require 'barge'
 class Droplet
   def initialize opts
     @opts = opts
+
+    puts "Starting droplet..."
     @droplet = barge.droplet.create({
       "name" => "digitel-tunnel-#{Time.now.to_i}",
       "region" => "nyc3",
