@@ -7,6 +7,8 @@ Things are a bit fragile still, so I'd recommend you keep an eye on your
 Digital Ocean control panel to make sure you're not racking up bills for
 unused servers.
 
+**Currently only supports OS X**
+
 ## Usage
 
 Pop your Digital Ocean SSH key fingerprint in config.yml.example (you
@@ -35,5 +37,4 @@ shuts the server down.
 ## TODO
 
 - [ ] Box deletion doesn't seem to work reliably
-- [ ] Also destroy box on exceptions, as well as ctrl+c
 - [ ] Handle different DO regions
