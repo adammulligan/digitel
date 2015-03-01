@@ -23,7 +23,7 @@ class Tunnel
   def wait_until_active
     loop do
       sleep 1
-      break if @droplet.info.networks != nil
+      break if @droplet.info.status == 'active'
     end
 
     yield
