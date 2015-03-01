@@ -9,11 +9,12 @@ unused servers.
 
 ## Usage
 
-Pop your Digital Ocean SSH key fingerprint in main.rb (you can find it
-in the DO control panel), along with your Digital Ocean API access
-token.
+Pop your Digital Ocean SSH key fingerprint in config.yml.example (you
+can find it in the DO control panel), along with your Digital Ocean API
+access token.
 
 ```
+cp config.yml.example config.yml
 ruby main.rb
 ```
 

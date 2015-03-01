@@ -1,10 +1,7 @@
 require './tunnel'
+require 'yaml'
 
-opts = {
-  access_token: '',
-  ssh_key_ids: [""]
-}
-
+opts = YAML.load_file('./config.yml')
 tunnel = Tunnel.new(opts)
 
 trap("INT") { tunnel.stop; exit }
